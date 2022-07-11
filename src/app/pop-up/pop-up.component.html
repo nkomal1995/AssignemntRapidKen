@@ -1,0 +1,39 @@
+
+
+
+
+<div class="col-md-4">
+    <div class="abovecard">
+      <mat-card>
+      
+   
+        <mat-card-content>
+          <form  [formGroup]="myRegis">
+            <mat-form-field class="full-width-input">
+             
+              <input matInput placeholder="name" [(ngModel)] = "name" required>
+             </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="position" [formControlName]="position" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input"   appearance="fill">
+                <mat-label>about</mat-label>
+                <textarea matInput placeholder="about" [formControlName]="about" required></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="full-width-input" appearance="fill">
+                <mat-label>{{date}}</mat-label>
+                <input matInput [matDatepicker]="picker" [formControlName]="date" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            <button mat-raised-button color="primary" (click)="onUpdate()">Update</button>&nbsp;
+            <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+           </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </div>

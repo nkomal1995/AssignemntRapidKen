@@ -1,0 +1,34 @@
+<!-- <p>header works!</p> -->
+<mat-toolbar color="primary">
+    <span>MyEmp</span>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+         <input matInput #refvar placeholder="search">
+          <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+          
+        </mat-form-field>
+      </form>
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="userLogin" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+         </button>
+         <mat-menu #menu="matMenu">
+            <button mat-menu-item  *ngIf="!userLogin">
+              <a class="sty" routerLink="/login"  > <span>Login</span></a>
+             </button>
+            <button mat-menu-item>
+              <a  class="sty" routerLink="/employee"> <span> Add employee </span></a>
+            </button>
+            
+            <button mat-menu-item >
+              <a  class="sty"  routerLink="/listView"> <span>ListView</span></a>
+             </button>
+             <button mat-menu-item >
+              <a  class="sty" routerLink="/cardView"> <span>CardView</span></a>
+             </button>
+            <button mat-menu-item *ngIf="userLogin" >
+              <a  class="sty"  (click)="onLogout()"> <span>Logout</span></a>
+             </button>
+          </mat-menu>
+
+  </mat-toolbar>

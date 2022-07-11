@@ -1,0 +1,29 @@
+
+<div class="col-md-4">
+    <div class="abovecard">
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+
+        <mat-card-content>
+          <form [formGroup]="myForm">
+            <mat-form-field class="full-width-input">
+              <input matInput placeholder="userName" formControlName="userName" required>
+
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input matInput type="Password" placeholder="Password" formControlName="password" required>
+
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="!myForm.valid"  (click)='login()'>Login</button>
+            
+            <!-- <button mat-raised-button color="primary" (click)="login()">Login</button> -->
+
+            <!-- <button mat-raised-button color="primary"   (click)="logout()"  >Logout</button> -->
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </div>
+
+
+    
